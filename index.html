@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>R&MApi</title>
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="stylesheet" href="./src/styles/cards.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1 class="main-title">¡Descubre todo sobre tu personaje favorito!</h1>
+    <main class="container">
+      <h1 class="title">Rick & Morty</h1>
+      <div class="search-box">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Escribe el nombre del personaje..."
+          autocomplete="off"
+        />
+        <button id="search-button" aria-label="Buscar">🔍</button>
+      </div>
+      <!-- Acá serán insertadas las cards para mostrar los personajes obtenidos en
+      la búsqueda. Si ninguno es encontrado, va a ser creada una card que lo
+      informe -->
+    </main>
+    <div id="results"></div>
+    <script type="module" src="./src/scripts/index.js"></script>
+  </body>
+</html>

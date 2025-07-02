@@ -1,0 +1,39 @@
+.favorite-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.page-btn {
+  background: #2a2a40;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page-btn:hover {
+  background: #444465;
+}
+
+.page-btn.active {
+  background: #00ffa2;
+  color: #0d0d1a;
+  font-weight: bold;
+}

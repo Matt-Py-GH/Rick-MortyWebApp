@@ -3,6 +3,10 @@ import { getCharacterByID, listEpisodesFromCharacter } from "./fetch";
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const contenedorPersonaje = document.getElementById("character-details")
+const volverButton = document.getElementById("volver-button")
+volverButton.addEventListener("click", () => {
+  window.location.href = "/"
+})
 
 
 await showAllData()
@@ -16,7 +20,6 @@ async function showAllData() {
         showCharacterDetails(personaje)
         showEpisodes(episodios)
   }catch(error){
-        console.log("ERROR EN LA PETICIÓN");
         episodios = null;
         personaje = null;
         showCharacterDetails(personaje)
@@ -27,7 +30,6 @@ async function showAllData() {
 function showCharacterDetails(character){
   contenedorPersonaje.innerHTML = "";
     if(!character){
-        console.log("NO CARACTER");
         const card = document.createElement("div")
         card.className = "character-details"
         card.textContent = "No existe este personaje..."

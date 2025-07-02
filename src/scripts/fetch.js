@@ -14,7 +14,7 @@ export async function getCharactersByName(name = '') {
     return response.data.results;
   } catch (error) {
     //Catcheamos el error si hay, y utilizamos la propia variable de error que nos ofrece Axios
-    const message = error.response?.data?.error || 'No se encontraron personajes';
+    const message = 'No se encontraron personajes';
     throw new Error(message);
   }
 }

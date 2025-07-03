@@ -1,12 +1,17 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(ellipse at top, #1e1e2f, #0d0d1a);
+  background-color: #1e1e2f;
   color: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-image: url("/rick-and-morty-backwoods-jjawme65vq8p2328.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .main-title {
@@ -34,8 +39,16 @@ body {
 
 .search-box {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.top-controls,
+.bottom-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 #search-input {
@@ -54,24 +67,26 @@ body {
 }
 
 #search-button,
-#sort-button {
-  background-color: #00ffa2;
+#sort-button,
+#favorites-button {
+  color: white;
+  background-color: #2c2c3e;
   border: none;
   border-radius: 8px;
   padding: 0 1.2rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  color: #111;
   transition: background-color 0.2s ease;
 }
 
-#search-button:hover {
+#search-button:hover,
+#sort-button:hover,
+#favorites-button:hover {
   background-color: #00c98b;
 }
 
 .search-box select {
   padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
   border: none;
   border-radius: 8px;
   background-color: #2c2c3e;
@@ -88,8 +103,4 @@ body {
 .search-box select:focus {
   outline: none;
   box-shadow: 0 0 8px #00ffa2;
-}
-
-#results {
-  min-height: 200px;
 }

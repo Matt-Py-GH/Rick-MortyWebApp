@@ -4,9 +4,18 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const contenedorPersonaje = document.getElementById("character-details")
 const volverButton = document.getElementById("volver-button")
-volverButton.addEventListener("click", () => {
-  window.location.href = "/"
-})
+volverButton.addEventListener("click", handleBack)
+
+function handleBack() {
+  const prev = localStorage.getItem("previousPage");
+
+  if (prev && prev.includes("favoritos")) {
+    window.location.href = "./favoritos.html";
+  } else {
+    window.location.href = "./index.html";
+  }
+}
+
 
 
 await showAllData()

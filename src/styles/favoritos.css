@@ -7,6 +7,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-image: url("/rick-and-morty-backwoods-jjawme65vq8p2328.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #favorites-container {
@@ -28,4 +33,8 @@ a {
   border: #00ffa2 1px solid;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.delete-all:hover {
+  background-color: #00ffa2c7;
 }

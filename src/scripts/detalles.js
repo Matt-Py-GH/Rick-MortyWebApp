@@ -1,11 +1,13 @@
 import { getCharacterByID, listEpisodesFromCharacter } from "./fetch";
 
+//Obtenemos el ID del personaje el cual se mostrarán sus detalles
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const contenedorPersonaje = document.getElementById("character-details")
 const volverButton = document.getElementById("volver-button")
 volverButton.addEventListener("click", handleBack)
 
+//Función para volver atrás, si estamos en detalles y veníamos de favoritos, volveremos a favoritos, sino al index.html, esto se consigue leyendo el previousPage del localStorage. El cual se almacena cada vez que se da clic en "ver detalles" botón de cada card de cada personaje, mostrado en favoritos y en el index 
 function handleBack() {
   const prev = localStorage.getItem("previousPage");
 
@@ -16,19 +18,20 @@ function handleBack() {
   }
 }
 
-
-
+//Función que muestra toda la información del personaje en cuestión
 await showAllData()
 
 async function showAllData() {
   let personaje;
   let episodios;
+  //Primero se consigue el personaje según su ID obtenido con la funcion que viene desde fecth, luego en base a ese personaje se obtienen sus episodios.
     try {
         personaje = await getCharacterByID(id)
         episodios = await listEpisodesFromCharacter(personaje);
         showCharacterDetails(personaje)
         showEpisodes(episodios)
   }catch(error){
+    //Si hay algún error, se setean en null y se envian como parámetros para mostrar los errores correspondientes
         episodios = null;
         personaje = null;
         showCharacterDetails(personaje)
@@ -36,8 +39,10 @@ async function showAllData() {
   }
 }
 
+//Creación dinámica de contenido para los detalles en caso de que exista el ID
 function showCharacterDetails(character){
   contenedorPersonaje.innerHTML = "";
+  //Card de error  si no hay personaje
     if(!character){
         const card = document.createElement("div")
         card.className = "character-details"
@@ -46,6 +51,7 @@ function showCharacterDetails(character){
         return
     }
 
+    //Función de creación principal
     const card = document.createElement("div")
     card.className = "character-details"
 
@@ -69,20 +75,21 @@ function showCharacterDetails(character){
     const elements = [title, characterImg, status, species, type, gender, origin, location,created,
 ];
 
+//Iteración para mostrar cada elemento que devuelve la API según cada personaje
     elements.forEach(element => {
             card.appendChild(element)
     });
 
-    
     contenedorPersonaje.appendChild(card);
 }
 
+//Función encargada de mostrar todos los episodios, haciendo una petición por cada episodio
 function showEpisodes(episodes){
     const contenedorEpisodios = document.getElementById("episodes");
     contenedorEpisodios.innerHTML = "";
 
+    //Si no tiene, se muestra esto
     if(!episodes || episodes.length === 0){
-      //console.log("SE METIO AL IF")
       const epDiv = document.createElement("div");
       epDiv.className = "character-attribute";
       epDiv.textContent = "Sin episodios";
@@ -91,7 +98,7 @@ function showEpisodes(episodes){
       return;
     }
 
-    //console.log("TODO SALIÓ BIEN")
+    //En caso de tener, se muestran dinámicamente.
     episodes.forEach(res => {
       const { episode, name } = res.data;
 
@@ -103,6 +110,8 @@ function showEpisodes(episodes){
     });
 }
 
+//Función para crear cada elemento por separado para mostrar en pantalla
+//Súper útil
 function createDetail(label, value) {
   const div = document.createElement("div");
   div.className = "character-attribute";

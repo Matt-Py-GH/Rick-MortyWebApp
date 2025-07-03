@@ -5,6 +5,11 @@ body {
   padding: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
+  background-image: url("/rick-and-morty-backwoods-jjawme65vq8p2328.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {

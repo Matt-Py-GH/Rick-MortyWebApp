@@ -2,12 +2,47 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>R&MApi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rick & Morty | Home</title>
+
+    <meta
+      name="description"
+      content="Explorá personajes de Rick and Morty, filtrá por estado y guardá tus favoritos. App interactiva con búsqueda y detalles."
+    />
+
+    <meta
+      name="keywords"
+      content="Rick and Morty, personajes, API, favoritos, búsqueda, serie animada"
+    />
+
+    <meta name="author" content="Tu Nombre o Alias" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <meta property="og:title" content="Rick & Morty API Explorer | R&MApi" />
+    <meta
+      property="og:description"
+      content="Buscá personajes, filtrá por estado y explorá el universo de Rick and Morty con una app web dinámica."
+    />
+    <meta property="og:image" content="/ruta/a/imagen-og.jpg" />
+    <meta property="og:url" content="https://tusitio.com/" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rick & Morty API Explorer | R&MApi" />
+    <meta
+      name="twitter:description"
+      content="Explorá todos los personajes de Rick and Morty con filtros, favoritos y más."
+    />
+    <meta name="twitter:image" content="/ruta/a/imagen-og.jpg" />
+
     <link rel="stylesheet" href="./src/styles/index.css" />
     <link rel="stylesheet" href="./src/styles/cards.css" />
     <link rel="stylesheet" href="./src/styles/extras.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./src/styles/mediaQuery.css" />
   </head>
+
   <body>
     <h1 class="main-title">¡Descubre todo sobre tu personaje favorito!</h1>
     <main class="container">
@@ -30,13 +65,9 @@
             <option value="Dead">Muerto</option>
             <option value="unknown">Desconocido</option>
           </select>
-          <button id="favorites-button">⭐ Favoritos</button>
+          <button id="favorites-button">❤️ Favoritos</button>
         </div>
       </div>
-
-      <!-- Acá serán insertadas las cards para mostrar los personajes obtenidos en
-      la búsqueda. Si ninguno es encontrado, va a ser creada una card que lo
-      informe -->
     </main>
     <div id="loader" style="display: none">Cargando...</div>
     <div id="results"></div>

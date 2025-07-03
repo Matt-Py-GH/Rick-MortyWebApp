@@ -1,5 +1,5 @@
 /* media query del index */
-@media (max-width: 600px) {
+@media (min-width: 280px) and (max-width: 600px) {
   .character-card {
     width: 100%;
     max-width: none;
@@ -27,7 +27,7 @@
 }
 
 /* media query de detalles */
-@media (max-width: 600px) {
+@media (min-width: 280px) and (max-width: 600px) {
   body {
     padding: 1rem;
   }
@@ -75,7 +75,7 @@
 }
 
 /* media query de favoritos */
-@media (max-width: 600px) {
+@media (min-width: 280px) and (max-width: 600px) {
   header {
     display: flex;
     flex-direction: column;

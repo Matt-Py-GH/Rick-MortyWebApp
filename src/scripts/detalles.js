@@ -86,7 +86,7 @@ function showCharacterDetails(character){
 //Función encargada de mostrar todos los episodios, haciendo una petición por cada episodio
 function showEpisodes(episodes){
     const contenedorEpisodios = document.getElementById("episodes");
-    contenedorEpisodios.innerHTML = "";
+    contenedorEpisodios.innerHTML = "Episodios";
 
     //Si no tiene, se muestra esto
     if(!episodes || episodes.length === 0){
